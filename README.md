@@ -1,6 +1,6 @@
 # word-guess-game
 
-This is a fun game with pizaz.
+This is a fun game with pizzaz.
 
 
 Guessing which letters are in the word will appear in the appropriate location.
