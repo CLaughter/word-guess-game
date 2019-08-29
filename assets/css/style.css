@@ -4,44 +4,73 @@
   }
   
   .grad {
-    background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+    background-image: repeating-radial-gradient(rgb(170, 70, 70), rgb(167, 167, 102) 10%, rgb(108, 155, 108) 15%);
     padding: 30px;
   }
 
   #title {
   color: chartreuse;
   text-align: center;
-  padding: 10px;
+  padding: 50px;
   margin-right: 700px;
   margin-left: 700px;
   background-color: black;
   border-radius: 35px;
   }
 
+  section {
+    width: 100%;
+  }
+
+  .container {
+    background-color: rgb(61, 73, 61);
+    border-radius: 25px;
+    border: 2px solid #6d2823;
+    padding: 20px;
+    margin: 40px;
+    margin-left: 300px;
+    margin-right: 0;
+    height: 700px;
+  }
+
+  .score {
+    background-color: rgb(61, 73, 61);
+    border-radius: 25px;
+    border: 2px solid #6d2823;
+    padding: 20px;
+    margin: 40px;
+    margin-left: 0;
+    height: 700px;
+  }
+
   .gameArea {
+    float: left;
     background-color: rgb(167, 167, 177);
-    margin: 100px;
-    padding: 50px;
+    margin: 10px;
+    padding: 10px;
     width: 100%;
     height:650px;
     border-radius: 20px;
     border: 2px solid #251817;
+    text-align: center;
   }
 
   .scoreBoard {
     float: left;
     background-color: rgb(167, 167, 177);
-    margin: 100px;
-    padding: 50px;
+    margin: 10x;
+    padding: 10px;
     width: 100%;
     height:650px;
     border-radius: 20px;
     border: 2px solid #251817;
+    text-align: center;
   }
 
   #footer {
-    
-    background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+    clear: both;
+    overflow: auto;
+    background-image: repeating-radial-gradient(rgb(170, 70, 70), rgb(167, 167, 102) 10%, rgb(108, 155, 108) 15%);
     color: black;
     text-align: center;
     /* height: 20px; */
