@@ -30,7 +30,7 @@
     margin: 40px;
     margin-left: 300px;
     margin-right: 0;
-    height: 700px;
+    height: 675px;
   }
 
   .score {
@@ -40,28 +40,30 @@
     padding: 20px;
     margin: 40px;
     margin-left: 0;
-    height: 700px;
+    height: 675px;
   }
 
   .gameArea {
-    float: left;
+    /* float: left; */
     background-color: rgb(167, 167, 177);
     margin: 10px;
+    margin-right: 5px;
     padding: 10px;
     width: 100%;
-    height:650px;
+    height:600px;
     border-radius: 20px;
     border: 2px solid #251817;
     text-align: center;
   }
 
   .scoreBoard {
-    float: left;
+    /* float: left; */
     background-color: rgb(167, 167, 177);
-    margin: 10x;
+    margin: 10px;
+    margin-left: 1px;
     padding: 10px;
     width: 100%;
-    height:650px;
+    height:600px;
     border-radius: 20px;
     border: 2px solid #251817;
     text-align: center;
