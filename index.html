@@ -16,12 +16,14 @@
 </head>
 <body>
   
+  <!-- Display header -->
   <header class="grad">  
       <div id="title">
           <h1>🎶🎶Psychedelic Sounds🎶🎶</h1>
       </div>  
   </header>
 
+  <!-- Generate game and scorboard -->
   <section>        
     <div class="row">
       <!-- <div class="col-md-12"> -->
@@ -41,11 +43,28 @@
               <hr>
               </div>              
             <div>
-          </div>
+          </div>          
 
-      </div> 
+      <!-- </div>  -->
     </div>
   </section>
+
+  <!-- Prompt user for Name and confirm likeGames. If cancel, exit game with 
+  option to return -->
+  <script id="text">
+    var userName = prompt("Type in your naame");
+    var likeGames = confirm("Do you like Hangman? Hit cancel if no.")
+
+    if(likeGames) {
+      alert('Awesome. Have fun!');
+    } else {
+      alert( "Catch you later!");    
+    // need js code here to exit game with no gameArea or scoreBoard but inludes a functional return button
+    }
+    
+  
+  
+  </script>
   
   <section>
     <footer id="footer">
