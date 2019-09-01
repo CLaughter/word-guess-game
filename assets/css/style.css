@@ -4,17 +4,17 @@
   }
   
   .grad {
-    background-image: repeating-radial-gradient(rgb(170, 70, 70), rgb(167, 167, 102) 10%, rgb(108, 155, 108) 15%);
-    padding: 30px;
+  background-image: repeating-radial-gradient(rgb(170, 70, 70),rgb(167, 167, 102) 10%, rgb(108, 155, 108) 15%);
+  padding: 30px;
   }
 
   #title {
+  background-color: black;
   color: chartreuse;
   text-align: center;
   padding: 50px;
   margin-right: 700px;
   margin-left: 700px;
-  background-color: black;
   border-radius: 35px;
   }
 
@@ -22,6 +22,10 @@
     font-size: 36px;
   }
 
+  #welcome {
+    color: rgb(50, 23, 172);
+    font-size: 20px;
+  }
   .container {
     display: flex;
     flex-direction: row;
