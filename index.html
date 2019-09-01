@@ -9,9 +9,8 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <script src="assets/javascript/game.js"></script>
 
 </head>
 <body>
@@ -23,48 +22,28 @@
       </div>  
   </header>
 
-  <!-- Generate game and scorboard -->
-  <section>        
-    <div class="row">
-      <!-- <div class="col-md-12"> -->
+  <!-- Generate game and scoreboard areas-->
+  <section>
+    <div class="container"> 
 
-        <div class="container">
-            <!-- <div class="col-md-2"></div>  -->
-              <div class="gameArea">            
-                Hello!
-              </div>
-            <!-- </div>   -->
+      <div class="gameArea">     
+        <div id="welcome">
+        </div>                    
+        <hr>              
+      </div>
+
+      <div class="scoreBoard">
+        <div class="score">
+          Scoreboard
+          <hr>
         </div>
+      </div>  
 
-          <div class="score">
-            <div class="col-md-12">
-              <div class="scoreBoard">
-               Scoreboard
-              <hr>
-              </div>              
-            <div>
-          </div>          
-
-      <!-- </div>  -->
-    </div>
+    </div>   
   </section>
 
-  <!-- Prompt user for Name and confirm likeGames. If cancel, exit game with 
-  option to return -->
-  <script id="text">
-    var userName = prompt("Type in your naame");
-    var likeGames = confirm("Do you like Hangman? Hit cancel if no.")
+  
 
-    if(likeGames) {
-      alert('Awesome. Have fun!');
-    } else {
-      alert( "Catch you later!");    
-    // need js code here to exit game with no gameArea or scoreBoard but inludes a functional return button
-    }
-    
-  
-  
-  </script>
   
   <section>
     <footer id="footer">
@@ -72,6 +51,7 @@
     </footer>
   </section>
   
-  
+  <script src="assets/javascript/game.js"></script>
+
 </body>
 </html>
