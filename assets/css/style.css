@@ -18,6 +18,10 @@
   border-radius: 35px;
   }
 
+  h1 {
+    font-size: 36px;
+  }
+
   .container {
     display: flex;
     flex-direction: row;
@@ -65,28 +69,19 @@
   .grad,
   title,
   .container {
-    width: 100%;
+    width: 50%;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .grad,
-  title,
-  .container {
-    width: 100%;
-  }
-}
-
-
-/* Static header */
 @media screen and (max-width: 640px) {
   .grad,
   title,
   .container {
-    width: 100%;
+    width: 50%;
   }
 }
 
+/* Static header and footer */
   .grad {
     position: static;
   }
