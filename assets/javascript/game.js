@@ -32,15 +32,30 @@
     // Place userName after Hello in game area heading
     document.getElementById('welcome').innerHTML = "Hello " + userName + "! " + "Press any key to get started.";
 
-// ------------------------------------------------------------
+// -----------------------------------------------------------
 
-  // Start game
-  function startGame() {
-  // Word list     
-  var words = ['In A Gadda Da Vida, Tales of Brave Ulysses, If 6 Was 9, Yellow Submarine, One of These Days, Waiting for the Sun, The Low Spark of High Heeled Boys, The Great Gig in the Sky'];
+// Create an array of words
+const words = ['In A Gadda Da Vida', 'Tales of Brave Ulysses', 'If 6 Was 9', 'Yellow Submarine', 'One of These Days', 'Waiting for the Sun', 'The Low Spark of High Heeled Boys', 'The Great Gig in the Sky'];
 
-// Computer randon word choice  
-  actualWord=words[Math.floor(Math.random() * words.length)]
-  for(var i=0; i < actualWord.length; i++) {
-  progressWord.push('-');
+// Choose word randomly
+let computerSelect = words[Math.floor(Math.random() * words.length)];
+// console.log(computerSelect);
+
+// Create underscores based on length of word
+let underScores = [];
+console.log(computerSelect);
+
+let createUnderScore = function x() {
+  for(let i = 0; i < computerSelect.length; i++) {
+    underScores.push('-');
   }
+  return underScores;
+}
+console.log(createUnderScore());
+
+// Get users guess
+// Check if guess is correct
+// If correct push to right array
+// If incorrect push to wrong array
+
+

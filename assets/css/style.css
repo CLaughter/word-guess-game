@@ -39,6 +39,17 @@
     height: 675px;
   }
 
+  #underScore {
+    height: 550px;
+    width: 90%;
+    border: 1px solid rgb(76, 71, 71);
+    margin: 0 auto;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 25px;
+  }
+
   .gameArea {
     flex:3;
     background-color: rgb(167, 167, 177);
