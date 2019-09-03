@@ -39,12 +39,11 @@ const words = ['In A Gadda Da Vida', 'Tales of Brave Ulysses', 'If 6 Was 9', 'Ye
 
 // Choose word randomly
 let computerSelect = words[Math.floor(Math.random() * words.length)];
-// console.log(computerSelect);
+console.log(computerSelect);
+
 
 // Create underscores based on length of word
 let underScores = [];
-console.log(computerSelect);
-
 let createUnderScore = function x() {
   for(let i = 0; i < computerSelect.length; i++) {
     underScores.push('-');
@@ -53,7 +52,11 @@ let createUnderScore = function x() {
 }
 console.log(createUnderScore());
 
-// Get users guess
+// // Get users guess
+document.addEventListener('keypress', function(event) {
+  console.log(event);
+});
+
 // Check if guess is correct
 // If correct push to right array
 // If incorrect push to wrong array
