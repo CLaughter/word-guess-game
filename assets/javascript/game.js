@@ -30,20 +30,24 @@
       // }      
       
     // Place userName after Hello in game area heading
-    document.getElementById('welcome').innerHTML = "Hello " + userName + "! " + "Press any key to get started.";
+    document.getElementById('welcome').innerHTML = "Hello " + userName + "! " + "Press any lower key to get started.";
 
 // -----------------------------------------------------------
 
 // Create an array of words
-const words = ['In A Gadda Da Vida', 'Tales of Brave Ulysses', 'If 6 Was 9', 'Yellow Submarine', 'One of These Days', 'Waiting for the Sun', 'The Low Spark of High Heeled Boys', 'The Great Gig in the Sky'];
+const words = ['stones', 'cream', 'hendrix', 'beatles', 'floyd', 'doors', 'traffic', 'heep'];
 
 // Choose word randomly
 let computerSelect = words[Math.floor(Math.random() * words.length)];
 console.log(computerSelect);
 
-
+let rightChoice = [];
+let wrongChoice = [];
 // Create underscores based on length of word
 let underScores = [];
+
+// console.log(computerSelect);
+
 let createUnderScore = function x() {
   for(let i = 0; i < computerSelect.length; i++) {
     underScores.push('-');
@@ -52,13 +56,33 @@ let createUnderScore = function x() {
 }
 console.log(createUnderScore());
 
-// // Get users guess
+// Get users guess
 document.addEventListener('keypress', function(event) {
-  console.log(event);
-});
+  /* Test console.log(event); */
+  /* Need to convert the the keycode into a letter, w3s event.keyCode gets the Unicode for value, then convert into a string */
+let y = event.keyCode;
+console.log(y);
+
+//  convert to a string
+let z = String.fromCharCode(y);
+console.log(z);
+
+// Compare to chosen word
+console.log(computerSelect.indexOf(z)); 
+// returns the character location, if doesn't exist then returns -1
 
 // Check if guess is correct
-// If correct push to right array
-// If incorrect push to wrong array
+if(z.indexOf(computerSelect) > -1) {
+  // console.log(true);
+  // add to rightChoice array
+  rightChoice.push(z)
+  console.log(rightChoice);
+} else {
+  // add to the wrongChoice array
+  wrongChoice.push(z);
+  console.log(wrongChoice);
+}
+
+});
 
 
