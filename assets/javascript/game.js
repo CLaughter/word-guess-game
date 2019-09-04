@@ -30,7 +30,15 @@
       // }      
       
     // Place userName after Hello in game area heading
-    document.getElementById('welcome').innerHTML = "Hello " + userName + "! " + "Press any lower key to get started.";
+    document.getElementById('welcome').innerHTML = 'Hello ' + userName + '! ';
+    document.getElementById('underScore').innerHTML = 'Press any lowerCase key to get started.';
+    // document.getElementById('dash').innerHTML = ' _ _ _ _ _ ';
+    // document.getElementById('right').innerHTML = 'Correct Guess';
+    // document.getElementById('wrong').innerHTML = 'Wrong Guess';
+
+    // document.getElementByClass('score').innerHTML = 'Scoreboard';
+    // document.getElementById('win').innerHTML = 'Wins';
+    // document.getElementById('loss').innerHTML = 'Losses';
 
 // -----------------------------------------------------------
 
@@ -74,14 +82,20 @@ console.log(computerSelect.indexOf(z));
 // Check if guess is correct
 if(z.indexOf(computerSelect) > -1) {
   // console.log(true);
-  // add to rightChoice array
-  rightChoice.push(z)
+// add to rightChoice array
+rightChoice.push(z)
+// When rightChoice, replace underscore with letter
+underScores[indexOf(z)] = z;
+  console.log(underScores);
   console.log(rightChoice);
+
 } else {
   // add to the wrongChoice array
   wrongChoice.push(z);
   console.log(wrongChoice);
 }
+
+
 
 });
 
