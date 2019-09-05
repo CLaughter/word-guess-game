@@ -4,18 +4,23 @@
   }
   
   .grad {
+  display: flex;
+  justify-content: center;
   background-image: repeating-radial-gradient(rgb(170, 70, 70),rgb(167, 167, 102) 10%, rgb(108, 155, 108) 15%);
   padding: 30px;
+  /* width: 100%; */
   }
 
   #title {
   background-color: black;
   color: chartreuse;
   text-align: center;
+  font-size: 30px;
   padding: 50px;
-  margin-right: 700px;
-  margin-left: 700px;
+  /* margin-right: 700px;
+  margin-left: 700px; */
   border-radius: 35px;
+  width: 35%;
   }
 
   h1 {
@@ -26,6 +31,11 @@
     color: rgb(50, 23, 172);
     font-size: 28px;
   }
+
+section {
+  padding: 60px;
+}
+
   .container {
     display: flex;
     flex-direction: row;
@@ -36,18 +46,18 @@
     margin: 40px;
     margin-left: 300px;
     margin-right: 0;
-    height: 675px;
+    height: 650px;
   }
 
   #underScore {
-    height: 315px;
+    height: 275px;
     border: 1px solid rgb(76, 71, 71);
     margin: 5px;
     margin-top: 5px;
     margin-bottom: 0;
     border-radius: 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 40px;
     padding-top: 3px;
   }
 
@@ -57,6 +67,7 @@
     border-radius: 20px;
     border: 2px solid #251817;
     text-align: center;
+    padding: 2px;
   }
 
   #guessedLtrs {
@@ -66,19 +77,7 @@
     text-align: center;
     font-size: 18px;
     padding: 10px;
-    padding-bottom: 60px;
-    margin: 5px;
-    height: 75px;
-  }
-
-  #right {
-    background-color: rgb(167, 167, 177);
-    border-radius: 20px;
-    border: 2px solid #251817;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
     margin: 5px;
     height: 75px;
   }
@@ -95,6 +94,19 @@
     height: 75px;
   }
 
+  #goodLuck {
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid #c00c00;
+    text-align: center;
+    font-size: 36px;
+    color: rgb(72, 252, 153);
+    padding-top: 20px;
+    padding-bottom: 60px;
+    margin: 5px;
+    height: 75px;
+  }
+
   .scoreBoard {
     width: 25%;
     background-color: rgb(167, 167, 177);
@@ -104,7 +116,7 @@
     font-size: 18px;
   }
 
-  .score {
+  #score {
     margin: 5px;
     padding: 10px;
     padding-bottom: 5px;
@@ -113,7 +125,7 @@
   }
 
 
-  #footer {
+  #bottom {
     background-image: repeating-radial-gradient(rgb(170, 70, 70), rgb(167, 167, 102) 10%, rgb(108, 155, 108) 15%);
     color: black;
     text-align: center;
@@ -126,19 +138,26 @@
   }
  
  /* Media Query */
-@media screen and (max-width: 980px) {
+ @media screen and (max-width: 760px) {
   .grad,
   title,
   .container {
-    width: 50%;
+    font-size: 30px;
+    color: green;
   }
 }
+
 
 @media screen and (max-width: 640px) {
   .grad,
   title,
   .container {
-    width: 50%;
+    font-size: 24px;
+    color: blue;
+  }
+
+  h1 {
+    font-size: 28px;
   }
 }
 

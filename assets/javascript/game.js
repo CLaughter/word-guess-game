@@ -23,15 +23,15 @@ document.getElementById('welcome').innerHTML = 'Hello ' + userName + '! ' + 'Pre
 // instructions in gameArea
 // document.getElementById('underScore').innerHTML = 'Press any lowerCase key to get started.';
 // Display right wrong boxes
-document.getElementById('guessedLtrs').innerHTML = 'Guessed Letters';
-document.getElementById('wrong').innerHTML = 'Wrong Guess'
-document.getElementById('right').innerHTML = 'Right Guess';
+document.getElementById('guessedLtrs').innerHTML = 'Guessed Letters: ';
+document.getElementById('wrong').innerHTML = 'Wrong Guess';
 
 // Display ScoreBoard
-document.getElementsByClassName('score').innerHTML = 'Scoreboard';
-// document.getElementById('remaining').innerHTML = 'Remaining guesses: ';
+document.getElementById('score').innerHTML = 'Scoreboard';
+document.getElementById('numGuess').innerHTML = 'Remaining guesses: ';
 document.getElementById('win').innerHTML = 'Wins: ';
 document.getElementById('loss').innerHTML = 'Losses: ';
+document.getElementById('goodLuck').innerHTML = 'Good Luck';
 
 // -----------------------------------------------------------
 
@@ -40,10 +40,9 @@ document.getElementById('loss').innerHTML = 'Losses: ';
 // Create an array of words
 const words = ['stones', 'cream', 'hendrix', 'beatles', 'floyd', 'doors', 'traffic', 'heep'];  
 let letters = ['a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'];
-let actualWord = '';
+let computerSelect = '';
 let currentWrdLtrs = [];
 let underScores = [];
-// let rightChoice = [];
 let wrongChoice = [];
 let blanks = 0;
 
@@ -55,7 +54,7 @@ let guessesLeft = 10;
 // Functions
 function newGame() {
   // Choose word randomly
-  let computerSelect = words[Math.floor(Math.random() * words.length)];
+  computerSelect = words[Math.floor(Math.random() * words.length)];
   console.log(computerSelect);
 
   currentWrdLtrs = computerSelect.split('');
@@ -78,41 +77,31 @@ function newGame() {
     console.log(createUnderScore());
 
     document.getElementById('underScore').innerHTML = underScores.join(' ');
-    document.getElementById('remaining').innerHTML = 'Number of Guesses Remaining: ' + ' ' + guessesLeft;
-    document.getElementById('win').innerHTML = 'Wins: ' + ' ' + wins;
-    document.getElementById('loss').innerHTML = 'Losses: ' + ' ' + losses;
+    document.getElementsByClassName('remaining').innerHTML = guessesLeft;
+    document.getElementById('win').innerHTML = wins;
+    document.getElementById('loss').innerHTML = losses;
 
 }
 
-function verifyLtrs() {  
+function verifyLtrs(event) {  
 		//Check if the letter pressed is an actual letter in the alphabet
 		if (event.keyCode >= 65 && event.keyCode <= 90) { 
 
       //Check if the letter guessed is one of the letters in the word
-      var correctLetter = false;
-
+      let correctLetter = false;
+      const letter = event.key
       for ( var i = 0; i < blanks; i++) {
-        if(actualWord[i] == letter) {
+        if(computerSelect[i] === letter) {
           correctLetter = true;
-        }
-      }
-
-      //Check where the correct letter is located on the word, then add to html
-      if(correctLetter) {
-        for ( var i = 0; i < blanks; i++) {
-          if(actualWord[i] == letter) {
-            underScores[i] = letter;
-          }
+          underScores[i] = letter;
         }
       }
 
       //If the letter isn't part of the word
-      else {
+      if(!correctLetter) {
         wrongChoice.push(letter);
         guessesLeft--
       }
-
-      //testing via console
       console.log(underScores);
       
   } else { //If user input is not a letter from the alphabet
@@ -125,14 +114,14 @@ function roundComplete() {
   console.log('Win count: ' + wins +  ' | Loss Count: ' + losses + ' | Guesses Left: ' + guessesLeft)
 
   //Update HTML with Game Stats
-  document.getElementById('remaining').innerHTML = 'Number of Guesses Remaining: ' + ' ' + guessesLeft;
+  document.getElementsByClassName('remaining').innerHTML = guessesLeft;
   document.getElementById('underScore').innerHTML = underScores.join(' ');
-  document.getElementById('right').innerHTML = 'Letters Already Guessed:' + ' ' + wrongChoice.join(' ');
+  document.getElementById('wrong').innerHTML = wrongChoice.join(' ');
 
   //Check if the user won
-  if (computerSelect.toString() == underScores.toString()) {
+  if (computerSelect.toString() === underScores.join('')) {
     win++;
-    alert("CONTRATULATIONS! You guessed '" + word + "' correctly. Try another round?");
+    alert("CONTRATULATIONS! You guessed '" + words + "' correctly. Try another round?");
     console.log('YOU WIN!');
 
     // Update the wins in the HTML doc
@@ -140,7 +129,7 @@ function roundComplete() {
 
     //Start New Game and clear letters already guessed
     newGame();
-    document.getElementById('guessedLtrs').innerHTML = 'Letters Already Guessed:' + ' ' + ' ';
+    document.getElementById('guessedLtrs').innerHTML = 'Letters Already Guessed: ' + ' ' + ' ';
 
   } else if (guessesLeft == 0) { //Check if user lost
     loss++;
@@ -153,26 +142,56 @@ function roundComplete() {
 
     //Start New Game
     newGame();
-    document.getElementById('guessedLtrs').innerHTML = 'Letters Already Guessed:' + ' ' + ' ';
-
+    document.getElementById('guessedLtrs').innerHTML = 'Letters Already Guessed:  ' + ' ' + ' ';
   }  
 }
 
-// MAIN PROCESS
-//=============
-
-	//Call function to start the game for the first time
+  //Call function to start the game for the first time
 	newGame();
 
 	//Get input from user on what keys are being pressed
 	document.onkeyup = function(event) {
 		//Create a variable to hold all the letters that have been guessed
-		let ltrsGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-			console.log('You Guessed the letter: ' + ltrsGuessed); // Testing via Console.Log
+		var ltrsGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+			console.log("You Guessed the letter:  " + ltrsGuessed);
 
-		//Run the check letters function
-		checkLtrs(ltrsGuessed);
-		roundComplete();
-  };
+		// Run the check letters function
+		verifyLtrs(event);
+    roundComplete();
+    
+    // Game iteration with Guesses Left
+		if (guessesLeft <= 8) {
+			document.getElementsByClassName("remaining").innerHTML = '7';
+		}
+
+		if (guessesLeft <= 7) {
+			document.getElementsByClassName("remaining").innerHTML = '6';
+		}
+
+		if (guessesLeft <= 6) {
+			document.getElementsByClassName("remaining").innerHTML = '5';
+		}
+
+		if (guessesLeft <= 5) {
+			document.getElementsByClassName("remaining").innerHTML = '4';
+		}
+
+		if (guessesLeft <= 4) {
+			document.getElementsByClassName("remaining").innerHTML = '3';
+		}
+
+		if (guessesLeft <= 3) {
+			document.getElementsByClassName("remaining").innerHTML = '2';
+		}
+
+		if (guessesLeft <= 2) {
+			document.getElementsByClassName("remaining").innerHTML = '1';
+		}
+
+		if (guessesLeft <= 1) {
+			document.getElementById("chiefHopperImg").document.getElementsByClassName("remaining").innerHTML = '0';
+		}
+
+	}
 
 
