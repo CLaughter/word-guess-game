@@ -10,19 +10,19 @@ if(likeGames) {
   }
 
 // end game or restart
-  // var restart = confirm("Restart game?");
-  // if(restart) {
-  //   alert('Let\'s Go!');
-  // } else {
-  //   window.open('https://claughter.github.io/basic-portfolio/');
-  // }      
+  var restart = confirm("Restart game?");
+  if(restart) {
+    alert('Let\'s Go!');
+  } else {
+    window.open('https://claughter.github.io/basic-portfolio/');
+  }      
   
 // Place userName after Hello in welcome
 document.getElementById('welcome').innerHTML = 'Hello ' + userName + '! ' + 'Press any lowerCase key to get started.';
 
 // instructions in gameArea
 // document.getElementById('underScore').innerHTML = 'Press any lowerCase key to get started.';
-// Display right wrong boxes
+// Display boxes
 document.getElementById('guessedLtrs').innerHTML = 'Guessed Letters: ';
 document.getElementById('wrong').innerHTML = 'Wrong Guess';
 
@@ -78,8 +78,8 @@ function newGame() {
 
     document.getElementById('underScore').innerHTML = underScores.join(' ');
     document.getElementsByClassName('remaining').innerHTML = guessesLeft;
-    document.getElementById('win').innerHTML = wins;
-    document.getElementById('loss').innerHTML = losses;
+    // document.getElementById('winNum').innerHTML = wins;
+    // document.getElementById('lossesNum').innerHTML = losses;
 
 }
 
@@ -120,25 +120,25 @@ function roundComplete() {
 
   //Check if the user won
   if (computerSelect.toString() === underScores.join('')) {
-    win++;
-    alert("CONTRATULATIONS! You guessed '" + words + "' correctly. Try another round?");
+    wins++;
+    alert("CONTRATULATIONS! You guessed '" + computerSelect + "' correctly. Try another round?");
     console.log('YOU WIN!');
 
     // Update the wins in the HTML doc
-    document.getElementById('win').innerHTML = 'Wins: ' + ' ' + win;
+    document.getElementById('win').innerHTML = 'Wins: ' + ' ' + wins;
 
     //Start New Game and clear letters already guessed
     newGame();
     document.getElementById('guessedLtrs').innerHTML = 'Letters Already Guessed: ' + ' ' + ' ';
 
   } else if (guessesLeft == 0) { //Check if user lost
-    loss++;
-    alert('OH NO! You have 0 guesses left, and all your friends are now in the upsidedown. The correct word was "' + currentWord + '". Do you want to try again?')
+    losses++;
+    alert('OH NO! You have 0 guesses left. The correct word was "' + computerSelect + '". Do you want to try again?')
 			console.log('You Lost!');
     console.log('You Lost!');
 
     // Update the wins in the HTML doc
-    document.getElementById('loss').innerHTML = 'Losses: ' + ' ' + loss;
+    document.getElementById('loss').innerHTML = 'Losses: ' + ' ' + losses;
 
     //Start New Game
     newGame();
@@ -189,7 +189,7 @@ function roundComplete() {
 		}
 
 		if (guessesLeft <= 1) {
-			document.getElementById("chiefHopperImg").document.getElementsByClassName("remaining").innerHTML = '0';
+			document.getElementsByClassName("remaining").innerHTML = '0';
 		}
 
 	}
