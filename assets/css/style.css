@@ -33,7 +33,7 @@ section {
   padding: 60px;
 }
 
-  .container {
+  #container {
     display: flex;
     flex-direction: row;
     background-color: rgb(61, 73, 61);
@@ -41,8 +41,8 @@ section {
     border: 2px solid #6d2823;
     padding: 20px;
     margin: 40px;
-    margin-left: 300px;
-    margin-right: 0;
+    margin-left: 10px;
+    margin-right: 10;
     height: 650px;
   }
 
@@ -135,7 +135,7 @@ section {
   }
  
  /* Media Query */
- @media screen and (max-width: 760px) {
+ @media screen and (max-width: 500px) {
   .grad,
   title,
   .container {
