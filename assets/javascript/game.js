@@ -159,7 +159,12 @@ function roundComplete() {
 		verifyLtrs(event);
     roundComplete();
     
-    // Game iteration with Guesses Left
+    // Game iteration with Guesses Left      
+
+    if (guessesLeft <= 9) {
+			document.getElementsByClassName("remaining").innerHTML = '8';
+		}
+
 		if (guessesLeft <= 8) {
 			document.getElementsByClassName("remaining").innerHTML = '7';
 		}
